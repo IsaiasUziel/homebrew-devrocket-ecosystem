@@ -3,7 +3,7 @@ cask "devrocket-ecosystem" do
   name "devrocket-ecosystem"
   desc "An opinionated terminal dev environment - Ghostty + Tmux + Neovim + Zsh"
   homepage "https://github.com/IsaiasUziel/devrocket-ecosystem"
-  version "0.1.1"
+  version "0.1.2"
 
   livecheck do
     skip "Auto-generated on release."
@@ -15,12 +15,12 @@ cask "devrocket-ecosystem" do
     on_intel do
       url "https://github.com/IsaiasUziel/devrocket-ecosystem/releases/download/v#{version}/devrocket-ecosystem_darwin_amd64.tar.gz",
         verified: "github.com/IsaiasUziel/devrocket-ecosystem/"
-      sha256 "33e9f9f75499dc682b57f28c5962b7952f0e4b5d572813157aacb4858533e82b"
+      sha256 "1440a7b2608f1ca42277871a1e97c84434754d29f7353d856a86a42fc0b22cac"
     end
     on_arm do
       url "https://github.com/IsaiasUziel/devrocket-ecosystem/releases/download/v#{version}/devrocket-ecosystem_darwin_arm64.tar.gz",
         verified: "github.com/IsaiasUziel/devrocket-ecosystem/"
-      sha256 "79ebe19cb61712177fc07b31bfab5f59321e0ce4a156aad47542c737265996d0"
+      sha256 "3b637d0baeb270a8ea1f3133e6d078f4fd3e3786bbff9c1e29c2661ac1e6f16e"
     end
   end
 
@@ -28,12 +28,18 @@ cask "devrocket-ecosystem" do
     on_intel do
       url "https://github.com/IsaiasUziel/devrocket-ecosystem/releases/download/v#{version}/devrocket-ecosystem_linux_amd64.tar.gz",
         verified: "github.com/IsaiasUziel/devrocket-ecosystem/"
-      sha256 "c6c5ba4fdb27c74f739681876be4be5cb80320bd158947607d280ea0b5140fb8"
+      sha256 "177d8717fd16b6b0e47ec183fc2895c36d24daeeacd7464754ba4801ff648b49"
     end
     on_arm do
       url "https://github.com/IsaiasUziel/devrocket-ecosystem/releases/download/v#{version}/devrocket-ecosystem_linux_arm64.tar.gz",
         verified: "github.com/IsaiasUziel/devrocket-ecosystem/"
-      sha256 "2d34b4b1f8de13d8d6b7fb118c90ffbc8c17358ad9cfee88102b6b567f6e5c36"
+      sha256 "f67dedd097a4c106723a6bfceee7332684a4ef3e2136bae5bfe43c688b1a8f9a"
+    end
+  end
+
+  postflight do
+    if OS.mac?
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/devrocket-ecosystem"]
     end
   end
 
