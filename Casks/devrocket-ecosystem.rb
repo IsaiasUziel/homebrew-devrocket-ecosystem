@@ -3,7 +3,7 @@ cask "devrocket-ecosystem" do
   name "devrocket-ecosystem"
   desc "An opinionated terminal dev environment - Ghostty + Tmux + Neovim + Zsh"
   homepage "https://github.com/IsaiasUziel/devrocket-ecosystem"
-  version "0.1.4"
+  version "0.1.5"
 
   livecheck do
     skip "Auto-generated on release."
@@ -15,12 +15,12 @@ cask "devrocket-ecosystem" do
     on_intel do
       url "https://github.com/IsaiasUziel/devrocket-ecosystem/releases/download/v#{version}/devrocket-ecosystem_darwin_amd64.tar.gz",
         verified: "github.com/IsaiasUziel/devrocket-ecosystem/"
-      sha256 "a80b9d630fa141e574c9390b7f53741895e9f0a3c9f8e5663f2636a072c0223d"
+      sha256 "71af60f8e46857a3aa147173ea418375d32cc30882b358d1ad583606fad49fc1"
     end
     on_arm do
       url "https://github.com/IsaiasUziel/devrocket-ecosystem/releases/download/v#{version}/devrocket-ecosystem_darwin_arm64.tar.gz",
         verified: "github.com/IsaiasUziel/devrocket-ecosystem/"
-      sha256 "a0f9389b5c3569eecfba9567b3a2b6c00f49abeefae4582d96a1da7abb81682d"
+      sha256 "7bc7c32a006fd2f17c6a61d692aaa008a8a0e39478f5f56490856e1f85bb0b3f"
     end
   end
 
@@ -28,12 +28,12 @@ cask "devrocket-ecosystem" do
     on_intel do
       url "https://github.com/IsaiasUziel/devrocket-ecosystem/releases/download/v#{version}/devrocket-ecosystem_linux_amd64.tar.gz",
         verified: "github.com/IsaiasUziel/devrocket-ecosystem/"
-      sha256 "3975373b14cf5c057b32ef919ff0c5cf2f436924b93607101f7c2e94bb96c2a9"
+      sha256 "bb0e40d7cba407c77eed255becadbc2959726ea0af54dd06643395ab413b2752"
     end
     on_arm do
       url "https://github.com/IsaiasUziel/devrocket-ecosystem/releases/download/v#{version}/devrocket-ecosystem_linux_arm64.tar.gz",
         verified: "github.com/IsaiasUziel/devrocket-ecosystem/"
-      sha256 "48b83b7964bcb80bc9bf55eb5d4b2a1e187a9d2172f301371505ec7fa46820e4"
+      sha256 "a29c8bbdddf922db2a074f971042b79c14ebec59040199f4302767039abcd926"
     end
   end
 
