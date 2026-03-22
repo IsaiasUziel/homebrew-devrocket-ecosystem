@@ -3,24 +3,24 @@ cask "devrocket-ecosystem" do
   name "devrocket-ecosystem"
   desc "An opinionated terminal dev environment - Ghostty + Tmux + Neovim + Zsh"
   homepage "https://github.com/IsaiasUziel/devrocket-ecosystem"
-  version "0.1.3"
+  version "0.1.4"
 
   livecheck do
     skip "Auto-generated on release."
   end
 
-  binary "devrocket-ecosystem"
+  binary "dr-sys"
 
   on_macos do
     on_intel do
       url "https://github.com/IsaiasUziel/devrocket-ecosystem/releases/download/v#{version}/devrocket-ecosystem_darwin_amd64.tar.gz",
         verified: "github.com/IsaiasUziel/devrocket-ecosystem/"
-      sha256 "e36ba6eb8b1276ca28aab42065d5d43328c0eaf646e8952b34a8cbb4a7800c50"
+      sha256 "a80b9d630fa141e574c9390b7f53741895e9f0a3c9f8e5663f2636a072c0223d"
     end
     on_arm do
       url "https://github.com/IsaiasUziel/devrocket-ecosystem/releases/download/v#{version}/devrocket-ecosystem_darwin_arm64.tar.gz",
         verified: "github.com/IsaiasUziel/devrocket-ecosystem/"
-      sha256 "14170199ed1c789dd7deae95db5157f4136c4fbaef2351d055863acccff6922c"
+      sha256 "a0f9389b5c3569eecfba9567b3a2b6c00f49abeefae4582d96a1da7abb81682d"
     end
   end
 
@@ -28,18 +28,18 @@ cask "devrocket-ecosystem" do
     on_intel do
       url "https://github.com/IsaiasUziel/devrocket-ecosystem/releases/download/v#{version}/devrocket-ecosystem_linux_amd64.tar.gz",
         verified: "github.com/IsaiasUziel/devrocket-ecosystem/"
-      sha256 "e1349dcb2147ab02e79f51ce6a17c4159e4a387546883cdce91153fb7fe7c0a1"
+      sha256 "3975373b14cf5c057b32ef919ff0c5cf2f436924b93607101f7c2e94bb96c2a9"
     end
     on_arm do
       url "https://github.com/IsaiasUziel/devrocket-ecosystem/releases/download/v#{version}/devrocket-ecosystem_linux_arm64.tar.gz",
         verified: "github.com/IsaiasUziel/devrocket-ecosystem/"
-      sha256 "01a88fef1b0122ff15c923b85edadde6b5b400e8b995f1880ba2bfe9855913b2"
+      sha256 "48b83b7964bcb80bc9bf55eb5d4b2a1e187a9d2172f301371505ec7fa46820e4"
     end
   end
 
   postflight do
     if OS.mac?
-      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/devrocket-ecosystem"]
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/dr-sys"]
     end
   end
 
